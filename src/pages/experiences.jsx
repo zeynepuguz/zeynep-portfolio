@@ -46,7 +46,7 @@ Additional achievements are listed on the Achievements page.`,
   ];
 
   return (
-    <div className="relative min-h-[calc(100vh-80px)] py-20 px-6 overflow-hidden text-white">
+    <div className="relative min-h-[calc(100vh-80px)] py-8 sm:py-16 lg:py-20 px-4 sm:px-6 overflow-hidden text-white">
       {/* 🌈 Background gradient motion */}
       <motion.div
         className="absolute inset-0 -z-10 opacity-20 blur-3xl"
@@ -70,35 +70,35 @@ Additional achievements are listed on the Achievements page.`,
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-extrabold text-pink-400 mb-12 text-center"
+        className="text-3xl sm:text-4xl font-extrabold text-pink-400 mb-8 sm:mb-12 text-center"
       >
         Experiences
       </motion.h1>
 
       {/* Timeline */}
-      <div className="relative max-w-5xl mx-auto border-l-2 border-pink-400/40 pl-8">
+      <div className="relative max-w-5xl mx-auto border-l-2 border-pink-400/40 pl-4 sm:pl-8">
         {experiences.map((exp, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.1 }} // 💡 EKLENDİ
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ delay: i * 0.2, duration: 0.6 }}
-            className="relative mb-10"
+            className="relative mb-8 sm:mb-10"
           >
 
             {/* Nokta */}
-            <span className="absolute -left-[11px] top-1.5 w-4 h-4 rounded-full bg-pink-400 shadow-[0_0_10px_#ec4899aa]" />
+            <span className="absolute -left-[7px] sm:-left-[11px] top-1.5 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-pink-400 shadow-[0_0_10px_#ec4899aa]" />
 
             {/* İçerik */}
-            <div className="bg-white/5 border border-pink-400/30 backdrop-blur-xl rounded-xl p-6 shadow-lg hover:shadow-pink-500/20 transition text-center">
-              <h2 className="text-lg font-semibold text-pink-300 mb-1">
+            <div className="bg-white/5 border border-pink-400/30 backdrop-blur-xl rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-pink-500/20 transition text-center">
+              <h2 className="text-base sm:text-lg font-semibold text-pink-300 mb-1">
                 {exp.company}
               </h2>
-              <p className="text-sm text-gray-400 mb-1">{exp.period}</p>
-              <p className="font-medium text-gray-200">{exp.role}</p>
-              <p className="text-sm text-gray-400 mb-3">{exp.location}</p>
-              <p className="text-gray-300 leading-relaxed whitespace-pre-line text-center">
+              <p className="text-xs sm:text-sm text-gray-400 mb-1">{exp.period}</p>
+              <p className="font-medium text-gray-200 text-sm sm:text-base">{exp.role}</p>
+              <p className="text-xs sm:text-sm text-gray-400 mb-3">{exp.location}</p>
+              <p className="text-gray-300 leading-relaxed whitespace-pre-line text-center text-xs sm:text-sm">
                 {exp.description}
               </p>
             </div>

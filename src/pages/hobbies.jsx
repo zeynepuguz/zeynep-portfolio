@@ -43,31 +43,31 @@ const hobbies = [
 
 export default function HobbiesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-16 px-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
       <motion.h1
-        className="text-4xl font-bold text-center mb-12"
+        className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
       >
         🎨 My Hobbies & Interests
       </motion.h1>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
         {hobbies.map((hobby, i) => (
           <motion.div
             key={i}
             whileHover={{ scale: 1.08, rotate: 1 }}
-            className="bg-gray-800/60 hover:bg-gray-700/70 rounded-2xl p-6 flex flex-col items-center text-center transition"
+            className="bg-gray-800/60 hover:bg-gray-700/70 rounded-2xl p-4 sm:p-6 flex flex-col items-center text-center transition"
           >
-            {hobby.icon}
-            <h2 className="text-xl font-semibold mt-4 mb-2">{hobby.name}</h2>
-            <p className="text-gray-400 text-sm">{hobby.desc}</p>
+            <div className="text-3xl sm:text-4xl">{hobby.icon}</div>
+            <h2 className="text-lg sm:text-xl font-semibold mt-3 sm:mt-4 mb-2">{hobby.name}</h2>
+            <p className="text-gray-400 text-xs sm:text-sm">{hobby.desc}</p>
           </motion.div>
         ))}
       </div>
 
       <motion.p
-        className="text-center text-gray-400 mt-16 text-sm italic"
+        className="text-center text-gray-400 mt-12 sm:mt-16 text-xs sm:text-sm italic px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}

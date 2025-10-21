@@ -1,27 +1,83 @@
+import { useRef, useState, useEffect } from "react";
 import { Outlet } from "react-router";
 import { NavLink } from "react-router";
 import Footer from "../components/Footer";
-import { Home,UserRound, Briefcase,Sparkles,FolderGit2,Trophy,MessagesSquare,Palette, Award} from "lucide-react"; 
+import {
+  Home, UserRound, Briefcase, Sparkles, FolderGit2,
+  Trophy, MessagesSquare, Palette, Award,
+} from "lucide-react";
+
 export default function MainLayout() {
-    return (
-        <div id="main-layout" className="min-h-screen flex flex-col relative text-white overflow-hidden">
-            <header className="container">
-                <nav>
-                <NavLink to="/">Home <br /><Home size={20} /> {/* ← ikon */}</NavLink>
-                <NavLink to="/aboutme">About Me <br /><UserRound size={20} /></NavLink>
-                <NavLink to="/experiences">Experiences <br /> <Briefcase size={20} /></NavLink>
-                <NavLink to="/achievements">Achievements <br /> <Trophy size={20} /></NavLink>
-                <NavLink to="/projects">Projects <br /><FolderGit2 size={20} /></NavLink>
-                <NavLink to="certificates">Certificates <br /><Award size={20} /> </NavLink>
-                <NavLink to="/communication">Communication <br /><MessagesSquare size={20} /></NavLink>
-                <NavLink to="/skills">Skills <br /><Sparkles size={20} /></NavLink>
-                <NavLink to="/hobbies">Hobbies <br /><Palette size={20} /></NavLink>
-            </nav>
-            </header>
-            <main className="container">
-                <Outlet />
-            </main>
-            <Footer />
-        </div>
-    );
+  const scrollRef = useRef(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const navItems = [
+    { to: "/", label: "Home", icon: <Home size={16} /> },
+    { to: "/aboutme", label: "About", icon: <UserRound size={16} /> },
+    { to: "/experiences", label: "Experience", icon: <Briefcase size={16} /> },
+    { to: "/achievements", label: "Achievements", icon: <Trophy size={16} /> },
+    { to: "/projects", label: "Projects", icon: <FolderGit2 size={16} /> },
+    { to: "/certificates", label: "Certificates", icon: <Award size={16} /> },
+    { to: "/skills", label: "Skills", icon: <Sparkles size={16} /> },
+    { to: "/hobbies", label: "Hobbies", icon: <Palette size={16} /> },
+    { to: "/communication", label: "Contact", icon: <MessagesSquare size={16} /> },
+  ];
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    setAtStart(el.scrollLeft <= 0);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 1);
+  };
+
+  const scrollLeft = () => scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+  const scrollRight = () => scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    el.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="page-wrapper">
+      <header className="main-header">
+        <button
+          className={`scroll-btn left ${atStart ? "disabled" : ""}`}
+          onClick={scrollLeft}
+        >
+          &#10094;
+        </button>
+
+        <nav className="scroll-container" ref={scrollRef}>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `nav-item ${isActive ? "active" : ""}`
+              }
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
+        </nav>
+
+        <button
+          className={`scroll-btn right ${atEnd ? "disabled" : ""}`}
+          onClick={scrollRight}
+        >
+          &#10095;
+        </button>
+      </header>
+
+      <main className="main-content">
+        <Outlet />
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

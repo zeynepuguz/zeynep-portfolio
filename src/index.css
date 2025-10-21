@@ -148,6 +148,13 @@ body::before {
 }
 
 /* 📱 Responsive düzen */
+@media (max-width: 1536px) {
+  /* 2xl breakpoint altında desktop navigation gizle */
+  .desktop-nav {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     gap: 1rem;
@@ -159,6 +166,270 @@ body::before {
 
   main p {
     font-size: 1rem;
+  }
+
+  .profile-card {
+    max-width: 90%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-links a {
+    font-size: 1.4rem;
+  }
+
+  /* Header responsive */
+  header {
+    height: 60px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Additional responsive improvements for navbar */
+@media (max-width: 1280px) {
+  /* xl breakpoint altında mobile menu göster */
+  .desktop-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Small mobile screens */
+  header {
+    padding: 0.5rem 0;
+  }
+  
+  .mobile-menu-item {
+    padding: 0.75rem;
+  }
+}
+
+/* Tablet responsive improvements */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .mobile-menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large tablet and small desktop */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .mobile-menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* YouTube-style navigation improvements */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.nav-scroll-btn {
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.9) 0%, rgba(236, 72, 153, 0.7) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.nav-scroll-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, rgba(236, 72, 153, 1) 0%, rgba(236, 72, 153, 0.8) 100%);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav-scroll-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0.2) 100%);
+}
+
+/* YouTube-style category navigation items */
+.youtube-category-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+  color: white;
+}
+
+.youtube-category-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.youtube-category-item.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+/* YouTube-style category container */
+.youtube-category-container {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.youtube-category-item {
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* YouTube-style scroll buttons */
+.youtube-scroll-btn {
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.youtube-scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Smooth scroll behavior */
+.youtube-nav-container {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.youtube-nav-item {
+  scroll-snap-align: start;
+}
+
+/* Header improvements */
+header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation container improvements */
+.youtube-nav-container {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.youtube-nav-item {
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.youtube-nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.youtube-nav-item:hover::before {
+  opacity: 1;
+}
+
+/* Responsive improvements for YouTube-style nav */
+@media (max-width: 1024px) {
+  .youtube-nav-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .youtube-nav-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .nav-scroll-btn {
+    padding: 0.5rem;
+  }
+}
+
+/* Header responsive improvements */
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 0;
+  }
+  
+  .youtube-nav-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .social-links {
+    gap: 0.8rem;
+  }
+
+  .social-links a {
+    font-size: 1.2rem;
+  }
+
+  /* Header küçük ekranlar için */
+  header {
+    height: 55px;
+  }
+
+  .container {
+    padding: 0 0.75rem;
   }
 }
 
@@ -688,4 +959,165 @@ button[type="submit"]:hover {
   .project-section p {
     font-size: 0.95rem;
   }
+
+  .achievement-card {
+    width: 95%;
+    margin: 1.5rem auto;
+    padding: 1rem;
+  }
+
+  .slider-container {
+    height: 12rem;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+    margin: 1rem auto;
+  }
+
+  .project-card h2 {
+    font-size: 1rem;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievement-card {
+    width: 98%;
+    margin: 1rem auto;
+    padding: 0.8rem;
+  }
+
+  .slider-container {
+    height: 10rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+    margin: 0.8rem auto;
+  }
+
+  .project-card h2 {
+    font-size: 0.9rem;
+  }
+
+  .project-card p {
+    font-size: 0.8rem;
+  }
+
+  .project-btn {
+    width: 120px;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+/* Genel düzen */
+.page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000, #1a0026 80%);
+  color: #fff;
+}
+
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ec4899; /* tailwind-pink-500 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* bu artık nav'ı ortalar */
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* scroll-container artık genişliği kadar olacak, 100% değil */
+.scroll-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;    /* içindekileri de ortalar */
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 40px;
+  max-width: 90%;             /* bu kilit satır */
+  margin: 0 auto;             /* ortalar */
+  scrollbar-width: none;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* nav-item düzeni aynı kalıyor */
+.nav-item {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.3s;
+  text-align: center;
+}
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+.nav-item.active {
+  background: white;
+  color: #ec4899;
+}
+
+
+/* Ok butonları */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2000;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #ec4899;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+  background: white;
+}
+
+.scroll-btn.left {
+  left: 8px;
+}
+
+.scroll-btn.right {
+  right: 8px;
+}
+
+.scroll-btn.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* İçerik */
+.main-content {
+  padding-top: 80px;
 }

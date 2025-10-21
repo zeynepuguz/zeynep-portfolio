@@ -89,7 +89,7 @@ export default function AchievementsPage() {
   ];
 
   return (
-    <div className="relative min-h-[calc(100vh-80px)] py-16 text-white flex flex-col items-center justify-start">
+    <div className="relative min-h-[calc(100vh-80px)] py-8 sm:py-16 text-white flex flex-col items-center justify-start px-4 sm:px-6">
       {/* 🌈 Arka plan */}
       <motion.div
         className="absolute inset-0 -z-10 opacity-25 blur-3xl"
@@ -101,16 +101,16 @@ export default function AchievementsPage() {
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       />
 
-      <h1 className="text-4xl font-extrabold text-pink-400 mb-10 text-center">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-pink-400 mb-6 sm:mb-10 text-center">
         Achievements
       </h1>
 
       {/* 🎖️ Kartlar */}
-      <div className="flex flex-col gap-10 items-center w-full">
+      <div className="flex flex-col gap-6 sm:gap-10 items-center w-full">
         {achievements.map((a, i) => (
           <div
             key={i}
-            className="achievement-card bg-white/5 border border-pink-400/30 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden w-[90%] max-w-[650px]"
+            className="achievement-card bg-white/5 border border-pink-400/30 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden w-full max-w-[650px]"
           >
             {/* 🔄 Görsel Alanı */}
             <div className="slider-container">
@@ -148,13 +148,13 @@ export default function AchievementsPage() {
             </div>
 
             {/* 📜 Metin kısmı */}
-            <div className="p-6 text-center">
-              <p className="text-sm text-gray-400">{a.year}</p>
-              <h2 className="text-xl font-bold text-pink-300 mt-1">{a.title}</h2>
-              <p className="text-sm text-gray-400 mt-1 italic">{a.team}</p>
-              <p className="text-md text-white mt-2 font-semibold">{a.project}</p>
-              <p className="text-pink-400 font-semibold mt-1">{a.rank}</p>
-              <p className="text-gray-300 mt-3 text-sm leading-relaxed">
+            <div className="p-4 sm:p-6 text-center">
+              <p className="text-xs sm:text-sm text-gray-400">{a.year}</p>
+              <h2 className="text-lg sm:text-xl font-bold text-pink-300 mt-1">{a.title}</h2>
+              <p className="text-xs sm:text-sm text-gray-400 mt-1 italic">{a.team}</p>
+              <p className="text-sm sm:text-md text-white mt-2 font-semibold">{a.project}</p>
+              <p className="text-pink-400 font-semibold mt-1 text-sm sm:text-base">{a.rank}</p>
+              <p className="text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
                 {a.description}
               </p>
             </div>

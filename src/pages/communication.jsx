@@ -82,7 +82,7 @@ export default function CommunicationPage() {
   ];
   <br />
   return (
-    <div className="relative min-h-[calc(100vh-80px)] py-20 px-6 text-white flex flex-col items-center justify-center">
+    <div className="relative min-h-[calc(100vh-80px)] py-8 sm:py-16 lg:py-20 px-4 sm:px-6 text-white flex flex-col items-center justify-center">
       {/* 🌈 Arka plan */}
       <motion.div
         className="absolute inset-0 -z-10 opacity-30 blur-3xl"
@@ -102,16 +102,16 @@ export default function CommunicationPage() {
       />
 
       <motion.h1
-        className="text-4xl font-extrabold text-center text-pink-400 mb-10"
+        className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center text-pink-400 mb-6 sm:mb-10"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        Let's Connect and Collaborate <br />
+        Let's Connect and Collaborate
       </motion.h1>
 
       {/* 🌐 Sosyal Linkler */}
-      <div className="flex items-center justify-center gap-16 mb-20 flex-wrap">
+      <div className="flex items-center justify-center gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 lg:mb-20 flex-wrap">
         {links.map((link, i) => (
           <motion.a
             key={i}
@@ -131,23 +131,23 @@ export default function CommunicationPage() {
 
       {/* 📬 Form */}
       <motion.div
-        className="w-full max-w-[500px] bg-white/10 border border-pink-400/30 rounded-[28px] p-8 m-2 backdrop-blur-lg shadow-2xl"
+        className="w-full max-w-[500px] bg-white/10 border border-pink-400/30 rounded-[28px] p-4 sm:p-6 lg:p-8 m-2 backdrop-blur-lg shadow-2xl"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl font-bold text-pink-300 text-center mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-pink-300 text-center mb-4 sm:mb-6">
           Send a Message
         </h2>
 
-        <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-5">
+        <form ref={formRef} onSubmit={sendEmail} className="flex flex-col gap-4 sm:gap-5">
           <input
             type="text"
             id="table"
             name="user_name"
             placeholder="Your Name"
             required
-            className="p-4 rounded-2xl bg-white/20 border border-pink-400/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
+            className="p-3 sm:p-4 rounded-2xl bg-white/20 border border-pink-400/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition text-sm sm:text-base"
           />
           <input
             type="email"
@@ -155,7 +155,7 @@ export default function CommunicationPage() {
             name="user_email"
             placeholder="Your Email"
             required
-            className="p-4 rounded-2xl bg-white/20 border border-pink-400/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
+            className="p-3 sm:p-4 rounded-2xl bg-white/20 border border-pink-400/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition text-sm sm:text-base"
           />
           <textarea
             name="message"
@@ -163,13 +163,13 @@ export default function CommunicationPage() {
             rows="4"
             placeholder="Your Message"
             required
-            className="p-4 rounded-2xl bg-white/20 border border-pink-400/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition resize-none"
+            className="p-3 sm:p-4 rounded-2xl bg-white/20 border border-pink-400/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition resize-none text-sm sm:text-base"
           ></textarea>
 
           <motion.button
             type="submit"
             id="table"
-            className="bg-gradient-to-r from-pink-500 to-purple-600 py-3 rounded-2xl font-semibold shadow-md hover:shadow-pink-500/40 transition-all"
+            className="bg-gradient-to-r from-pink-500 to-purple-600 py-3 rounded-2xl font-semibold shadow-md hover:shadow-pink-500/40 transition-all text-sm sm:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
           >
@@ -178,7 +178,7 @@ export default function CommunicationPage() {
         </form>
 
         {status && (
-          <p className="text-center mt-4 text-sm text-pink-300">{status}</p>
+          <p className="text-center mt-4 text-xs sm:text-sm text-pink-300">{status}</p>
         )}
       </motion.div>
     </div>

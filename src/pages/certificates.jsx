@@ -134,7 +134,7 @@ export default function CertificatesPage() {
             </div>
 
             {/* Metin Alanı */}
-            <div className="p-5 text-center">
+            <div className="p-5 mb-4 text-center">
               <p className="text-sm text-gray-400">{c.date}</p>
               <h2 className="text-lg font-semibold text-pink-300 mt-1">
                 {c.title}
