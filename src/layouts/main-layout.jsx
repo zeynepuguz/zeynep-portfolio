@@ -26,17 +26,23 @@ export default function MainLayout() {
 
   const handleScroll = () => {
     const el = scrollRef.current;
+    if (!el) return;
     setAtStart(el.scrollLeft <= 0);
     setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 1);
   };
 
-  const scrollLeft = () => scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
-  const scrollRight = () => scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({ left: -250, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: 250, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const el = scrollRef.current;
-    el.addEventListener("scroll", handleScroll);
     handleScroll();
+    el.addEventListener("scroll", handleScroll);
     return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 

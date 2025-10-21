@@ -1021,39 +1021,39 @@ button[type="submit"]:hover {
   color: #fff;
 }
 
-
+/* HEADER */
 .main-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 60px;
-  background: #ec4899; /* tailwind-pink-500 */
+  background: #ec4899;
   display: flex;
   align-items: center;
-  justify-content: center; /* bu artık nav'ı ortalar */
-  overflow: hidden;
+  justify-content: center;
+  overflow: visible; /* Oklar taşsın */
   z-index: 1000;
 }
 
-/* scroll-container artık genişliği kadar olacak, 100% değil */
+/* SCROLL NAV */
 .scroll-container {
   display: flex;
   align-items: center;
-  justify-content: center;    /* içindekileri de ortalar */
+  justify-content: flex-start;
   gap: 10px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 0 40px;
-  max-width: 90%;             /* bu kilit satır */
-  margin: 0 auto;             /* ortalar */
+  padding: 0; /* ✅ tamamen kaldırıldı */
+  margin: 0;
+  width: 90%;
   scrollbar-width: none;
 }
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
 
-/* nav-item düzeni aynı kalıyor */
+/* NAV ITEM */
 .nav-item {
   flex: 0 0 auto;
   display: inline-flex;
@@ -1078,8 +1078,7 @@ button[type="submit"]:hover {
   color: #ec4899;
 }
 
-
-/* Ok butonları */
+/* OKLAR */
 .scroll-btn {
   position: absolute;
   top: 50%;
@@ -1105,11 +1104,13 @@ button[type="submit"]:hover {
 }
 
 .scroll-btn.left {
-  left: 8px;
+  left: 0;
+  transform: translate(-50%, -50%); /* ✅ yön düzeltildi */
 }
 
 .scroll-btn.right {
-  right: 8px;
+  right: 0;
+  transform: translate(50%, -50%); /* ✅ yön düzeltildi */
 }
 
 .scroll-btn.disabled {
@@ -1117,7 +1118,7 @@ button[type="submit"]:hover {
   pointer-events: none;
 }
 
-/* İçerik */
+/* MAIN CONTENT */
 .main-content {
   padding-top: 80px;
 }
