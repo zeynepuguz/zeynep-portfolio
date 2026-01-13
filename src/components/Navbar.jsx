@@ -10,13 +10,18 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-pink-600/90 text-white shadow-lg">
+    <header className="text-white shadow-lg" style={{ 
+      background: "linear-gradient(135deg, #1a0a14 0%, #000000 25%, #000000 50%, #000000 75%, #1a0a14 100%)", 
+      boxShadow: "0 2px 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(249, 168, 212, 0.15)", 
+      borderBottom: "2px solid rgba(249, 168, 212, 0.5)",
+      backdropFilter: "blur(10px)"
+    }}>
       <nav className="flex justify-center space-x-8 py-3 text-sm">
         {links.map((link) => (
           <NavLink
             key={link.to}
             to={link.to}
-            className="flex flex-col items-center hover:text-pink-200 transition"
+            className="flex flex-col items-center hover:text-purple-300 transition"
           >
             {link.icon}
             {link.label}

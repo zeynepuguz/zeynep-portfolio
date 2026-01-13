@@ -11,68 +11,71 @@ import {
 const hobbies = [
   {
     name: "Artificial Intelligence & Coding",
-    icon: <FaLaptopCode className="text-4xl text-blue-400" />,
-    desc: "I love creating new AI ideas, experimenting with models, and building side projects 🤖",
+    icon: <FaLaptopCode className="text-3xl" />,
+    desc: "I love developing new AI ideas, experimenting with models, and building side projects.",
   },
   {
     name: "Listening to Music",
-    icon: <FaMusic className="text-4xl text-pink-400" />,
-    desc: "Lo-fi or movie soundtracks help me stay focused while coding 🎧",
+    icon: <FaMusic className="text-3xl" />,
+    desc: "Lo-fi or movie soundtracks help me stay focused while coding.",
   },
   {
     name: "Watching Movies",
-    icon: <FaGamepad className="text-4xl text-purple-400" />,
-    desc: "I especially enjoy science fiction movies that spark imagination ✨",
+    icon: <FaGamepad className="text-3xl" />,
+    desc: "I especially enjoy science fiction movies that spark imagination.",
   },
   {
     name: "Photography",
-    icon: <FaCamera className="text-4xl text-yellow-400" />,
-    desc: "Capturing nature and city moments through my lens makes me truly happy 📸",
+    icon: <FaCamera className="text-3xl" />,
+    desc: "Capturing nature and city moments through my lens makes me truly happy.",
   },
   {
     name: "Reading Books & Magazines",
-    icon: <FaBook className="text-4xl text-green-400" />,
-    desc: "I love reading about technology, psychology, and personal growth 📚",
+    icon: <FaBook className="text-3xl" />,
+    desc: "I love reading about technology, psychology, and personal growth.",
   },
   {
     name: "Traveling",
-    icon: <FaPlane className="text-4xl text-orange-400" />,
-    desc: "Exploring new places and cultures always inspires me 🌍",
+    icon: <FaPlane className="text-3xl" />,
+    desc: "Exploring new places and cultures always inspires me.",
   },
 ];
 
 export default function HobbiesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
-      <motion.h1
-        className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-       My Hobbies & Interests
-      </motion.h1>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
+    <div className="min-h-screen text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6" style={{ background: "radial-gradient(circle at center, #000000 0%, #0a0a0a 50%, #000000 100%)" }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto mt-8">
         {hobbies.map((hobby, i) => (
           <motion.div
             key={i}
-            whileHover={{ scale: 1.08, rotate: 1 }}
-            className="bg-gray-800/60 hover:bg-gray-700/70 rounded-2xl p-4 sm:p-6 flex flex-col items-center text-center transition"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            whileHover={{ y: -4 }}
+            className="border border-purple-500/20 rounded-xl p-6 sm:p-7 hover:border-purple-500/35 transition-all backdrop-blur-sm"
+            style={{ background: "rgba(0, 0, 0, 0.6)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05)" }}
           >
-            <div className="text-3xl sm:text-4xl">{hobby.icon}</div>
-            <h2 className="text-lg sm:text-xl font-semibold mt-3 sm:mt-4 mb-2">{hobby.name}</h2>
-            <p className="text-gray-400 text-xs sm:text-sm">{hobby.desc}</p>
+            <div className="text-purple-300 mb-4 flex justify-center">
+              {hobby.icon}
+            </div>
+            <h2 className="text-lg sm:text-xl font-semibold mb-3 text-gray-200 text-center">
+              {hobby.name}
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base text-center leading-relaxed">
+              {hobby.desc}
+            </p>
           </motion.div>
         ))}
       </div>
 
       <motion.p
-        className="text-center text-gray-400 mt-12 sm:mt-16 text-xs sm:text-sm italic px-4"
+        className="text-center text-gray-400 mt-12 sm:mt-16 text-sm italic px-4 max-w-2xl mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 0.8 }}
       >
-        "Coding might be my profession, but inspiration comes from every hobby." 💫
+        "Coding might be my profession, but inspiration comes from every hobby."
       </motion.p>
     </div>
   );

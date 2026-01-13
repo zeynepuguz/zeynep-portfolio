@@ -10,17 +10,27 @@ export default function HomePage() {
       className="text-center px-4 py-8 sm:py-16"
     >
       <section className="profile-card animate-fadeUp animate-delay-3 max-w-md mx-auto sm:max-w-lg">
-        <img src={profileImg} alt="Zeynep Uğuz" className="profile-img w-32 h-32 sm:w-36 sm:h-36" />
+        <img
+          src={profileImg}
+          alt="Zeynep Uğuz"
+          className="profile-img w-32 h-32 sm:w-36 sm:h-36"
+        />
 
         <div className="profile-info">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pink-500 mb-2">Zeynep Uğuz</h2>
-          <p className="text-gray-400 text-sm sm:text-base mt-2">İstanbul, Türkiye</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2" style={{ textShadow: "0 0 10px rgba(255, 255, 255, 0.3)" }}>
+            Zeynep Uğuz
+          </h2>
 
-          <p className="animate-fadeUp animate-delay-2 text-lg sm:text-xl text-pink-300 font-medium">
-            Full Stack AI Developer
+          <p className="text-gray-300 text-sm sm:text-base mt-2">
+            Gebze / Kocaeli, Turkey
           </p>
+
+          <p className="animate-fadeUp animate-delay-2 text-lg sm:text-xl text-gray-200 font-medium">
+            Data Scientist
+          </p>
+
           <p className="profile-bio text-sm sm:text-base mt-4 px-2">
-            I develop innovative solutions by integrating artificial intelligence, backend, and mobile technologies.
+            I am a final year Software Engineering student with a strong focus on Data Science and applied Artificial Intelligence, particularly in Natural Language Processing and Machine Learning. I have hands-on experience with Python, TensorFlow, PyTorch, scikit-learn, Pandas, NumPy, Zemberek, and NLP augmentation techniques. I focus on creating end-to-end workflows, understanding model behavior, and extracting meaningful insights. My goal is to grow as an applied Data Scientist and contribute to practical, data-driven projects.
           </p>
         </div>
 
@@ -34,6 +44,7 @@ export default function HomePage() {
           >
             <i className="fab fa-github"></i>
           </a>
+
           <a
             href="https://www.kaggle.com/zeynepuuz"
             target="_blank"
@@ -43,6 +54,7 @@ export default function HomePage() {
           >
             <i className="fab fa-kaggle"></i>
           </a>
+
           <a
             href="https://www.linkedin.com/in/zeynep-u%C4%9Fuz-ab5a93262/"
             target="_blank"
@@ -52,6 +64,7 @@ export default function HomePage() {
           >
             <i className="fab fa-linkedin"></i>
           </a>
+
           <a
             href="https://medium.com/@zeynepuguz"
             target="_blank"

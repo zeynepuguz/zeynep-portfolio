@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import profileImg from "../images/zz.jpg";
 
 export default function AboutMePage() {
   return (
@@ -9,7 +8,7 @@ export default function AboutMePage() {
         className="absolute inset-0 -z-10 opacity-20 blur-3xl"
         style={{
           backgroundImage:
-            "linear-gradient(120deg, #ec4899, #8b5cf6, #3b82f6)",
+            "linear-gradient(120deg, #c084fc, #a78bfa, #f9a8d4)",
           backgroundSize: "200% 200%",
         }}
         animate={{
@@ -23,62 +22,43 @@ export default function AboutMePage() {
       />
 
       {/* 🩷 Header */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl font-extrabold text-pink-400 mb-6 sm:mb-10 text-center"
-      >
-        About Me
-      </motion.h1>
-
       {/* 🩵 Main Text Box */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="max-w-4xl w-full bg-white/5 border border-pink-400/30 backdrop-blur-xl shadow-2xl rounded-2xl p-4 sm:p-6 lg:p-8 text-gray-200 leading-relaxed text-justify"
+        className="max-w-4xl w-full border border-purple-500/20 backdrop-blur-xl shadow-2xl rounded-2xl p-6 sm:p-8 lg:p-10 text-gray-200 leading-relaxed text-justify mt-8"
+        style={{ background: "rgba(0, 0, 0, 0.6)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05)" }}
       >
         <p className="mb-4 text-sm sm:text-base">
-          I am a <span className="font-semibold text-white">4th-year Software Engineering student</span> 
-          at Kırklareli University. My main area of expertise is 
-          <span className="text-pink-300 font-medium"> Artificial Intelligence</span>, 
-          particularly in <strong>Natural Language Processing (NLP), Machine Learning,</strong> 
-          and <strong>Deep Learning</strong>.
+          I am a final year Software Engineering student with a strong and growing focus on Data Science,
+          Machine Learning, and applied Artificial Intelligence. Throughout my academic and practical
+          journey, I have become particularly interested in transforming raw data into meaningful insights
+          and building models that are not only accurate, but also interpretable and reliable.
+          <br /><br />
+          My primary areas of interest include Machine Learning and Natural Language Processing.
+          I have hands-on experience working with Python, Pandas, NumPy, scikit-learn, TensorFlow and PyTorch
+          and I have actively worked on NLP projects involving Turkish text using tools such as Zemberek and
+          various text augmentation techniques. I enjoy working on the entire data pipeline, from data
+          cleaning and feature engineering to model training, evaluation and performance analysis.
+<br /><br />
+          Rather than treating models as black boxes, I focus on understanding model behavior, analyzing
+          errors and evaluating performance using appropriate metrics such as precision, recall, ROC-AUC,
+          and confusion matrices. I believe that a strong data scientist should not only build models but
+          also be able to explain their decisions and limitations clearly.
+<br /><br />
+          During my internships and projects, I have worked on real-world data problems, collaborated in
+          team-based environments and contributed to technical documentation and model evaluation processes.
+          These experiences have strengthened my ability to think analytically, work systematically and
+          approach problems with a data driven mindset.
+<br /><br />
+          My long-term goal is to grow as an applied Data Scientist, contribute to impactful data-driven
+          projects, and continuously deepen my understanding of machine learning, statistics and real world
+          data challenges. I am highly motivated to learn, adapt, and take responsibility in environments
+          where data is used to drive meaningful decisions.
+<br /><br />
         </p>
 
-        <p className="mb-4 text-sm sm:text-base">
-          I have developed a <strong>Turkish sentiment analysis tool</strong>, where I actively 
-          used technologies such as <strong>Python, Keras, TensorFlow, PyTorch, scikit-learn, 
-          Numpy, Zemberek, NlpAUG,</strong> and <strong>Pandas</strong>.
-        </p>
-
-        <p className="mb-4 text-sm sm:text-base">
-          To integrate my AI models into real-world applications, I have been improving my 
-          skills in <strong>backend development</strong>, gaining experience with 
-          <strong> Java Spring Boot, RESTful APIs,</strong> and <strong>database management</strong>.
-        </p>
-
-        <p className="mb-4 text-sm sm:text-base">
-          In addition, I have recently started exploring <strong>mobile application development</strong> 
-          to make AI-powered systems more accessible to users.
-        </p>
-
-        <p className="mb-4 text-sm sm:text-base">
-          My goal is to build <strong>AI-driven, fully integrated solutions</strong> that combine 
-          intelligent models with backend and mobile technologies to create end-to-end products.
-        </p>
-
-        <p className="mb-4 text-sm sm:text-base">
-          In this direction, I define myself as a 
-          <span className="text-pink-300 font-semibold"> Full-Stack AI Developer</span>, aiming 
-          to bring together different technologies to produce innovative and sustainable projects.
-        </p>
-
-        {/* Signature */}
-        <p className="mt-6 italic text-right text-pink-300 text-sm sm:text-base">
-          — Zeynep Uğuz 🪄
-        </p>
       </motion.div>
 
       {/* 🎓 Education Box */}
@@ -88,14 +68,14 @@ export default function AboutMePage() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="max-w-xl w-full mt-8 sm:mt-12 bg-white/5 border border-white/10 rounded-xl p-4 sm:p-6 text-gray-200 text-center backdrop-blur-lg shadow-lg"
       >
-        <h3 className="text-pink-400 font-semibold mb-2 text-lg sm:text-xl">Education</h3>
+        <h3 className="text-white font-semibold mb-2 text-lg sm:text-xl">Education</h3>
         <p className="text-sm sm:text-base">🎓 4th-year Software Engineering @ Kırklareli University</p>
-        <p className="mt-2 text-xs sm:text-sm text-gray-400">2022 – Continuous</p>
+        <p className="mt-2 text-xs sm:text-sm text-gray-400">2022 – Present</p>
         <p className="mt-1 text-xs sm:text-sm text-gray-400">
           GPA: <span className="text-white font-medium">3.36</span>
         </p>
         <p className="mt-1 text-xs sm:text-sm text-gray-400">
-          ÖSYM Ranking: <span className="text-white font-medium">100.694</span>
+          National University Entrance Exam Ranking: <span className="text-white font-medium">100,694</span>
         </p>
       </motion.div>
 
@@ -106,7 +86,7 @@ export default function AboutMePage() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="max-w-xl w-full mt-6 sm:mt-8 bg-white/5 border border-white/10 rounded-xl p-4 sm:p-6 text-gray-200 text-center backdrop-blur-lg shadow-lg"
       >
-        <h3 className="text-pink-400 font-semibold mb-3 text-lg sm:text-xl">Languages</h3>
+        <h3 className="text-white font-semibold mb-3 text-lg sm:text-xl">Languages</h3>
         <ul className="list-disc text-center text-gray-300 pl-6 space-y-2">
           <p className="text-sm sm:text-base">
             <span className="text-white font-medium">Turkish</span> — Native

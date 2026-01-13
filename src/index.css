@@ -4,21 +4,19 @@
 
 /* 🎨 Tema değişkenleri */
 :root {
-  --primary: linear-gradient(90deg, #e60073, #ff4da6); /* canlı pembe geçiş */
-  --background: #0f172a;  /* koyu lacivert arka plan */
-  --text-color: #f5f5f5;  /* yumuşak beyaz */
-  --accent: #ff4da6;      /* vurgu rengi */
+  --primary: repeating-linear-gradient(120deg, #c39aaa, #6a424d, #000000); /* fuşyanın koyu tonları */
+  --background: #ff0088;  /* fuşyanın koyu arka plan */
+  --text-color: #f1f5f9;  /* açık metin */
+  --accent: #c084fc;      /* tatlı mor vurgu */
   --nav-height: 70px;     /* navbar yüksekliği */
   --font-primary: 'Poppins', sans-serif;
 }
 
 /* 🎯 Genel yapı */
 body {
-  background: radial-gradient(circle at 30% 30%, #1a0033 0%, #0b0020 60%, #000010 100%), 
-              repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 20px),
-              repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 20px);
+  background: radial-gradient(circle at center, #000000 0%, #0a0a0a 50%, #000000 100%);
   
-  color: #eaeaea;
+  color: #f1f5f9;
   font-family: "Poppins", "Inter", sans-serif;
   scroll-behavior: smooth;
   min-height: 100vh;
@@ -27,26 +25,27 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: -100px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255, 0, 150, 0.3) 0%, transparent 70%);
-  filter: blur(120px);
-  animation: moveGlow 12s ease-in-out infinite alternate;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.15) 0%, rgba(167, 139, 250, 0.1) 30%, transparent 60%);
+  filter: blur(180px);
+  animation: moveGlow 20s ease-in-out infinite alternate;
   z-index: -1;
 }
 
 body::after {
   content: "";
   position: fixed;
-  bottom: -120px;
-  right: -120px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(0, 200, 255, 0.3) 0%, transparent 70%);
-  filter: blur(120px);
-  animation: moveGlow 15s ease-in-out infinite alternate-reverse;
+  bottom: -200px;
+  right: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(249, 168, 212, 0.12) 0%, rgba(244, 114, 182, 0.08) 40%, transparent 60%);
+  filter: blur(150px);
+  animation: moveGlow 25s ease-in-out infinite alternate-reverse;
   z-index: -1;
 }
 
@@ -61,7 +60,8 @@ body::after {
 }
 /* 🔝 Header ve navbar */
 header {
-  background: var(--primary);
+  background: linear-gradient(135deg, #1a0a14 0%, #000000 25%, #000000 50%, #000000 75%, #1a0a14 100%) !important;
+  backdrop-filter: blur(10px);
   color: var(--text-color);
   display: flex;
   justify-content: center;
@@ -70,8 +70,9 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(249, 168, 212, 0.15) !important;
   z-index: 1000;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
 }
 
 /* 🌐 Navigasyon bağlantıları */
@@ -100,7 +101,7 @@ nav a:hover {
 nav a.active {
   color: var(--accent);
   font-weight: 600;
-  text-shadow: 0 0 8px rgba(255, 77, 166, 0.6);
+  text-shadow: 0 0 8px rgba(212, 196, 168, 0.4);
 }
 
 /* 🪩 Hero kısmı (ad + meslek) */
@@ -117,9 +118,9 @@ main h1 {
 }
 
 main p {
-  color: #dcdcdc;
+  color: #cbd5e1;
   font-size: 1.2rem;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* 🌈 Arka plan efekti */
@@ -130,9 +131,9 @@ body::before {
   left: -100px;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 20% 30%, #ff4da6 0%, transparent 40%),
-              radial-gradient(circle at 80% 70%, #e60073 0%, transparent 50%);
-  opacity: 0.1;
+  background: radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.15) 0%, transparent 50%);
+  opacity: 1;
   z-index: -1;
   animation: moveGradient 10s ease-in-out infinite alternate;
 }
@@ -256,23 +257,23 @@ body::before {
   display: none;
 }
 .nav-scroll-btn {
-  background: linear-gradient(90deg, rgba(236, 72, 153, 0.9) 0%, rgba(236, 72, 153, 0.7) 100%);
+  background: linear-gradient(90deg, rgba(192, 132, 252, 0.9) 0%, rgba(192, 132, 252, 0.7) 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.4);
   color: white;
 }
 
 .nav-scroll-btn:hover:not(:disabled) {
-  background: linear-gradient(90deg, rgba(236, 72, 153, 1) 0%, rgba(236, 72, 153, 0.8) 100%);
+  background: linear-gradient(90deg, rgba(192, 132, 252, 1) 0%, rgba(192, 132, 252, 0.8) 100%);
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(192, 132, 252, 0.6);
 }
 
 .nav-scroll-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
   transform: none;
-  background: linear-gradient(90deg, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0.2) 100%);
+  background: linear-gradient(90deg, rgba(192, 132, 252, 0.3) 0%, rgba(192, 132, 252, 0.2) 100%);
 }
 
 /* YouTube-style category navigation items */
@@ -324,10 +325,147 @@ body::before {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.youtube-scroll-btn:hover {
+.youtube-scroll-btn:hover:not(:disabled) {
   background: rgba(0, 0, 0, 0.9);
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.youtube-scroll-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Scroll wrapper styles */
+.scroll-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.scroll-container {
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 80px; /* ok butonları için daha fazla alan */
+  display: flex;
+  gap: 8px;
+  margin: 0 30px; /* ekstra margin */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-btn {
+  background: rgba(192, 132, 252, 0.8);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(192, 132, 252, 0.5);
+  z-index: 10;
+}
+
+.scroll-btn:hover:not(:disabled) {
+  background: rgba(192, 132, 252, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.7);
+}
+
+.scroll-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.scroll-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.scroll-btn.left {
+  position: absolute;
+  left: 10px;
+  z-index: 20;
+}
+
+.scroll-btn.right {
+  position: absolute;
+  right: 10px;
+  z-index: 20;
+}
+
+/* Navigation items */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border-radius: 9999px;
+  background: rgba(30, 0, 50, 0.7);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background: rgba(30, 0, 50, 0.9);
+  border-color: rgba(192, 132, 252, 0.4);
+  transform: translateY(-1px);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #c084fc 0%, #a78bfa 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.6), 0 2px 8px rgba(192, 132, 252, 0.3);
+  border-color: rgba(192, 132, 252, 0.5);
+}
+
+.nav-item span {
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* Header styles */
+.main-header {
+  background: linear-gradient(135deg, #000000 0%, #000000 25%, #000000 50%, #000000 75%, #000000 100%) !important;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 10px 0;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(249, 168, 212, 0.3), inset 0 1px 0 rgba(249, 168, 212, 0.15) !important;
+  border-bottom: 2px solid rgba(249, 168, 212, 0.5) !important;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #000000 0%, #0a0a0a 50%, #000000 100%);
+  color: #f1f5f9;
+}
+
+.main-content {
+  padding-top: 80px; /* header yüksekliği için */
 }
 
 /* Smooth scroll behavior */
@@ -466,8 +604,8 @@ header {
 }
 
 @keyframes glow {
-  0%, 100% { text-shadow: 0 0 5px #ff4da6, 0 0 10px #ff4da6; }
-  50% { text-shadow: 0 0 20px #ff99cc, 0 0 40px #ff4da6; }
+  0%, 100% { text-shadow: 0 0 5px #c084fc, 0 0 10px #c084fc; }
+  50% { text-shadow: 0 0 20px #a78bfa, 0 0 40px #c084fc; }
 }
 .glow-text {
   animation: glow 3s ease-in-out infinite alternate;
@@ -475,21 +613,23 @@ header {
 
 /* 🪩 Kart yapısı */
 .profile-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  padding: 2rem;
-  max-width: 380px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 420px;
   margin: 3rem auto;
   text-align: center;
   color: #f1f5f9;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(20px);
 }
 
 .profile-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(255, 77, 166, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.9), 0 0 60px rgba(192, 132, 252, 0.25), inset 0 0 30px rgba(249, 168, 212, 0.1);
+  border-color: rgba(192, 132, 252, 0.5);
 }
 
 /* 📸 Profil resmi */
@@ -498,12 +638,12 @@ header {
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid transparent;
-  background: linear-gradient(135deg, #ff4da6, #ff99cc, #b380ff) border-box;
+  border: 4px solid transparent;
+  background: linear-gradient(135deg, #f9a8d4, #c084fc, #a78bfa) border-box;
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  box-shadow: 0 0 15px rgba(255, 77, 166, 0.3);
-  margin-bottom: 1rem;
+  box-shadow: 0 0 30px rgba(249, 168, 212, 0.4), 0 0 50px rgba(192, 132, 252, 0.3);
+  margin-bottom: 1.5rem;
   transition: transform 0.5s ease;
 }
 
@@ -511,8 +651,8 @@ header {
   transform: scale(1.05);
 }
 .profile-card:hover {
-  background: linear-gradient(145deg, #1c1c3c, #2d0a3d);
-  box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+  background: rgba(30, 27, 75, 0.9);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.5), 0 0 60px rgba(192, 132, 252, 0.3);
   transform: translateY(-5px);
   transition: all 0.4s ease;
 }
@@ -521,19 +661,18 @@ header {
 .profile-info h2 {
   font-size: 1.9rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #ff4da6, #b380ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .profile-info p {
   font-size: 1rem;
-  color: #d1d5db;
+  color: #cbd5e1;
 }
 
 .profile-bio {
   margin-top: 1rem;
-  color: #cbd5e1;
+  color: #e2e8f0;
   line-height: 1.6;
   font-size: 0.95rem;
 }
@@ -547,13 +686,14 @@ header {
 
 .social-links a {
   font-size: 1.6rem;
-  color: #ff99cc;
+  color: #94a3b8;
   transition: color 0.3s, transform 0.3s;
 }
 
 .social-links a:hover {
-  color: #b380ff;
+  color: #c084fc;
   transform: translateY(-3px);
+  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.7));
 }
 
 .duck-icon {
@@ -653,7 +793,7 @@ header {
 }
 
 .active-dot {
-  background-color: #ec4899;
+  background-color: #c084fc;
 }
 
 .achievement-card {
@@ -671,8 +811,8 @@ header {
 
 /* Kart hover efekti */
 .achievement-card:hover {
-  border-color: #ec4899;
-  box-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
+  border-color: #c084fc;
+  box-shadow: 0 0 25px rgba(192, 132, 252, 0.6);
   transform: translateY(-3px);
   transition: all 0.3s ease;
 }
@@ -681,10 +821,10 @@ input, textarea {
   transition: all 0.3s ease;
 }
 input:focus, textarea:focus {
-  box-shadow: 0 0 12px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.6);
 }
 a:hover svg {
-  filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.7));
+  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.7));
 }
 /* 🔧 FORM RESET & CUSTOM STYLE OVERRIDE */
 input,
@@ -710,9 +850,9 @@ textarea::placeholder {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #f472b6;
-  box-shadow: 0 0 10px rgba(244, 114, 182, 0.4);
-  background: rgba(255, 255, 255, 0.12);
+  border-color: #c084fc;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 textarea {
@@ -724,7 +864,7 @@ textarea {
 button[type="submit"] {
   all: unset;
   text-align: center;
-  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  background: linear-gradient(90deg, #c084fc, #a78bfa);
   color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -732,13 +872,13 @@ button[type="submit"] {
   border-radius: 1rem;
   margin-top: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.6);
   transition: all 0.25s ease;
 }
 
 button[type="submit"]:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
+  box-shadow: 0 0 30px rgba(192, 132, 252, 0.8);
 }
 
 .transition-all {
@@ -752,9 +892,9 @@ button[type="submit"]:hover {
 }
 
 .project-card {
-  background: linear-gradient(145deg, rgba(30, 30, 40, 0.9), rgba(10, 10, 15, 0.9));
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(30, 27, 75, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(168, 85, 247, 0.1), inset 0 0 20px rgba(168, 85, 247, 0.05);
   border-radius: 16px;
   padding: 1.8rem;
   margin: 1.5rem auto;
@@ -765,21 +905,22 @@ button[type="submit"]:hover {
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
 }
 
 .project-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(255, 20, 147, 0.15);
-  border-color: rgba(255, 100, 200, 0.3);
-  background: linear-gradient(145deg, rgba(35, 35, 55, 0.95), rgba(15, 15, 25, 0.9));
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 50px rgba(168, 85, 247, 0.2), inset 0 0 30px rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.35);
+  background: rgba(30, 27, 75, 0.5);
 }
 
 
 /* === 🔘 Buton Tasarımı === */
 .project-btn {
-  background: linear-gradient(90deg, rgba(255, 105, 180, 0.2), rgba(147, 112, 219, 0.25));
-  border: 1px solid rgba(255, 182, 193, 0.3);
-  color: #ffb6c1;
+  background: linear-gradient(90deg, #a78bfa, #c084fc, #d8b4fe);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  color: #ffffff;
   font-weight: 500;
   letter-spacing: 0.4px;
   transition: all 0.3s ease;
@@ -789,23 +930,21 @@ button[type="submit"]:hover {
   border-radius: 0.8rem;
   display: flex; /* <--- butonu bir kutu haline getirir */
   margin: 1rem auto 0 auto; /* <--- üst boşluk + otomatik ortalama */
-  box-shadow: 0 0 8px rgba(255, 182, 193, 0.2);
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.4), 0 0 25px rgba(249, 168, 212, 0.2);
 }
 
 .project-btn:hover {
-  background: linear-gradient(90deg, rgba(255, 182, 193, 0.4), rgba(147, 112, 219, 0.45));
+  background: linear-gradient(90deg, #c084fc, #d8b4fe, #e9d5ff);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 0 10px rgba(255, 182, 193, 0.4);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.6), 0 0 35px rgba(249, 168, 212, 0.3);
 }
 
 /* === ✨ Başlık Animasyonu === */
 .projects-title {
-  background: linear-gradient(90deg, #ff69b4, #9370db, #7dd3fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   animation: shine 6s linear infinite;
-  background-size: 300%;
 }
 
 @keyframes shine {
@@ -821,25 +960,23 @@ button[type="submit"]:hover {
 .project-card h2 {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .project-card p {
-  color: #c9c9c9;
+  color: #d1d5db;
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
 .project-detail-title {
-  background: linear-gradient(90deg, #ff70b8, #9370db, #7dd3fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   text-align: center;
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 2.5rem;
-  animation: gradientFlow 6s linear infinite;
-  background-size: 200%;
 }
 
 @keyframes gradientFlow {
@@ -847,46 +984,41 @@ button[type="submit"]:hover {
   100% { background-position: 100%; }
 }
 
-/* 🧠 Ana Kartlar */
 .project-section {
-  background: rgba(30, 30, 45, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(192, 132, 252, 0.3);
   border-radius: 20px;
   padding: 2rem;
   margin: 2rem auto;
   max-width: 1000px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05);
+  backdrop-filter: blur(20px);
   transition: all 0.4s ease;
 }
 
 .project-section:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 192, 203, 0.3);
-  box-shadow: 0 10px 40px rgba(255, 100, 200, 0.15);
+  border-color: rgba(192, 132, 252, 0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 60px rgba(192, 132, 252, 0.25), inset 0 0 30px rgba(249, 168, 212, 0.1);
 }
 
-/* ✨ Başlık */
 .project-section h2 {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
   text-align: center;
-  background: linear-gradient(90deg, #ff9ecf, #c084fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* 📄 Paragraflar */
 .project-section p {
-  color: #d1d1d1;
+  color: #e2e8f0;
   font-size: 1rem;
   white-space: pre-line;
   text-align: justify;
   letter-spacing: 0.3px;
 }
 
-/* 🖼 Görseller */
 .project-section img {
   display: block;
   margin: 2rem auto;
@@ -902,28 +1034,26 @@ button[type="submit"]:hover {
   box-shadow: 0 6px 30px rgba(255, 182, 193, 0.2);
 }
 
-/* 🔘 Back to Projects butonu */
 .back-btn {
   display: block;
   margin: 0 auto 2rem auto;
-  background: linear-gradient(90deg, rgba(255, 105, 180, 0.2), rgba(147, 112, 219, 0.25));
-  border: 1px solid rgba(255, 182, 193, 0.3);
-  color: #ffb6c1;
+  background: linear-gradient(90deg, #a78bfa, #c084fc, #d8b4fe);
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  color: #ffffff;
   padding: 0.6rem 1.4rem;
   border-radius: 1rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(255, 182, 193, 0.15);
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
 }
 
 .back-btn:hover {
   color: #fff;
-  background: linear-gradient(90deg, rgba(255, 182, 193, 0.4), rgba(147, 112, 219, 0.4));
-  box-shadow: 0 0 14px rgba(255, 182, 193, 0.3);
+  background: linear-gradient(90deg, #c084fc, #d8b4fe, #e9d5ff);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.6);
   transform: translateY(-2px);
 }
 
-/* 🧩 Technologies kısmı */
 .tech-badges {
   display: flex;
   flex-wrap: wrap;
@@ -933,9 +1063,9 @@ button[type="submit"]:hover {
 }
 
 .tech-badges span {
-  background: rgba(255, 105, 180, 0.1);
-  border: 1px solid rgba(255, 182, 193, 0.3);
-  color: #ffc9dc;
+  background: rgba(192, 132, 252, 0.15);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  color: #d8b4fe;
   padding: 0.4rem 0.8rem;
   border-radius: 9999px;
   font-size: 0.85rem;
@@ -943,12 +1073,12 @@ button[type="submit"]:hover {
 }
 
 .tech-badges span:hover {
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(192, 132, 252, 0.3);
   color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
 }
 
-/* 📱 Responsive */
 @media (max-width: 768px) {
   .project-section {
     padding: 1.5rem;
@@ -1017,100 +1147,86 @@ button[type="submit"]:hover {
 /* Genel düzen */
 .page-wrapper {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #000, #1a0026 80%);
-  color: #fff;
+  background: radial-gradient(circle at center, #000000 0%, #0a0a0a 50%, #000000 100%);
+  color: #f1f5f9;
 }
 
-/* HEADER */
-.main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: #ec4899;
+.arrow-zone {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: visible; /* Oklar taşsın */
-  z-index: 1000;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px; /* ✅ geniş ekranlarda ortalanmış durur */
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 0 0 10px 10px;
+  padding: 4px 12px;
+  margin: 0 auto;
 }
 
-/* SCROLL NAV */
+
 .scroll-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 10px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 0; /* ✅ tamamen kaldırıldı */
-  margin: 0;
-  width: 90%;
   scrollbar-width: none;
+  width: 100%;
+  padding: 0 15px;
 }
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
 
-/* NAV ITEM */
 .nav-item {
   flex: 0 0 auto;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.15);
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: rgba(30, 0, 50, 0.7);
+  border: 1px solid rgba(192, 132, 252, 0.2);
   color: white;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   white-space: nowrap;
-  transition: background 0.3s;
-  text-align: center;
+  transition: all 0.2s ease;
 }
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(30, 0, 50, 0.9);
+  border-color: rgba(192, 132, 252, 0.4);
+  transform: translateY(-1px);
 }
 .nav-item.active {
-  background: white;
-  color: #ec4899;
+  background: linear-gradient(135deg, #c084fc 0%, #a78bfa 100%);
+  color: white;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.6), 0 2px 8px rgba(192, 132, 252, 0.3);
+  border-color: rgba(192, 132, 252, 0.5);
 }
 
-/* OKLAR */
 .scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2000;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.9);
-  color: #ec4899;
+  background: rgba(192, 132, 252, 0.9);
+  color: white;
   font-size: 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s;
+  box-shadow: 0 2px 6px rgba(192, 132, 252, 0.5);
+  transition: all 0.2s ease;
 }
 
 .scroll-btn:hover {
+  color: #ffffff;
   background: white;
-}
-
-.scroll-btn.left {
-  left: 0;
-  transform: translate(-50%, -50%); /* ✅ yön düzeltildi */
-}
-
-.scroll-btn.right {
-  right: 0;
-  transform: translate(50%, -50%); /* ✅ yön düzeltildi */
+  transform: scale(1.05);
 }
 
 .scroll-btn.disabled {
@@ -1118,7 +1234,6 @@ button[type="submit"]:hover {
   pointer-events: none;
 }
 
-/* MAIN CONTENT */
 .main-content {
-  padding-top: 80px;
+  padding-top: 100px;
 }

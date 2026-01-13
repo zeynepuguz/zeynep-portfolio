@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="mt-20 py-6 text-center text-gray-300 bg-transparent border-t border-pink-400/30">
+    <footer className="mt-20 py-6 text-center text-gray-300 bg-transparent border-t border-purple-500/30">
       <div className="container mx-auto px-4">
         <p className="mb-3 text-sm sm:text-base">
-          © 2025 Zeynep Uğuz | Full Stack AI Developer
+          © 2025 Zeynep Uğuz | Data Scientist
         </p>
 
         {/* 🌐 Sosyal linkler */}
@@ -14,7 +14,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             title="Send E-mail"
-            className="hover:text-pink-400 transition p-2 hover:bg-pink-500/10 rounded-lg"
+            className="hover:text-purple-300 transition p-2 hover:bg-purple-500/10 rounded-lg"
           >
             <i className="fa-solid fa-envelope"></i>
           </a>
@@ -25,7 +25,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             title="LinkedIn"
-            className="hover:text-blue-400 transition p-2 hover:bg-blue-500/10 rounded-lg"
+            className="hover:text-purple-300 transition p-2 hover:bg-purple-500/10 rounded-lg"
           >
             <i className="fa-brands fa-linkedin"></i>
           </a>
@@ -36,7 +36,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             title="GitHub"
-            className="hover:text-gray-200 transition p-2 hover:bg-gray-500/10 rounded-lg"
+            className="hover:text-purple-300 transition p-2 hover:bg-purple-500/10 rounded-lg"
           >
             <i className="fa-brands fa-github"></i>
           </a>

@@ -69,7 +69,7 @@ export default function AchievementsPage() {
       title: "TEKNOFEST – Blockchain Technologies Finalist",
       team: "Team EvoGenius",
       rank: "7th Place Nationwide",
-      project: "Dijital Bahçem",
+      project: "Digital Garden",
       description:
         "We collaboratively developed a blockchain-based agricultural traceability system that ensures transparency and authenticity throughout the supply chain.As a team, we ranked 7th nationwide at Teknofest 2025 Blockchain Technologies, demonstrating strong integration between AI, IoT, and blockchain innovation.",
       slides: evoSlides,
@@ -94,23 +94,20 @@ export default function AchievementsPage() {
       <motion.div
         className="absolute inset-0 -z-10 opacity-25 blur-3xl"
         style={{
-          backgroundImage: "linear-gradient(120deg,#ec4899,#8b5cf6,#3b82f6)",
+          backgroundImage: "linear-gradient(120deg,#c084fc,#a78bfa,#f9a8d4)",
           backgroundSize: "200% 200%",
         }}
         animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       />
 
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-pink-400 mb-6 sm:mb-10 text-center">
-        Achievements
-      </h1>
-
       {/* 🎖️ Kartlar */}
-      <div className="flex flex-col gap-6 sm:gap-10 items-center w-full">
+      <div className="flex flex-col gap-6 sm:gap-10 items-center w-full mt-8">
         {achievements.map((a, i) => (
           <div
             key={i}
-            className="achievement-card bg-white/5 border border-pink-400/30 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden w-full max-w-[650px]"
+            className="achievement-card border border-purple-500/20 backdrop-blur-xl rounded-2xl overflow-hidden w-full max-w-[650px]"
+            style={{ background: "rgba(0, 0, 0, 0.6)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05)" }}
           >
             {/* 🔄 Görsel Alanı */}
             <div className="slider-container">
@@ -150,10 +147,10 @@ export default function AchievementsPage() {
             {/* 📜 Metin kısmı */}
             <div className="p-4 sm:p-6 text-center">
               <p className="text-xs sm:text-sm text-gray-400">{a.year}</p>
-              <h2 className="text-lg sm:text-xl font-bold text-pink-300 mt-1">{a.title}</h2>
-              <p className="text-xs sm:text-sm text-gray-400 mt-1 italic">{a.team}</p>
+              <h2 className="text-lg sm:text-xl font-bold text-white mt-1">{a.title}</h2>
+              <p className="text-xs sm:text-sm text-gray-300 mt-1 italic">{a.team}</p>
               <p className="text-sm sm:text-md text-white mt-2 font-semibold">{a.project}</p>
-              <p className="text-pink-400 font-semibold mt-1 text-sm sm:text-base">{a.rank}</p>
+              <p className="text-white font-semibold mt-1 text-sm sm:text-base">{a.rank}</p>
               <p className="text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
                 {a.description}
               </p>

@@ -125,20 +125,20 @@ Class imbalance was handled using the SMOTE technique, resulting in evenly distr
       text: `
 Random Forest achieved a training score of 0.98 and a test accuracy of 0.65.
 Detailed metrics include precision, recall, and F1-score for each sentiment class.`,
-      images: [image10, image11], // performans tablosu ve sınıflandırma raporu
+      images: [image10, image11], // performance table and classification report
     },
     {
       title: "🧩 Confusion Matrix",
       text: `
 The confusion matrix below illustrates the model's classification performance across sentiment categories.`,
-      images: [image12], // karışıklık matrisi
+      images: [image12], // confusion matrix
     },
     {
       title: "💬 Prediction Example",
       text: `
 A real-time example demonstrates the model’s prediction for a new input text.
-For instance, the sentence “beğenmedim” is correctly classified as ‘Olumsuz’ (Negative).`,
-      images: [image11], // tahmin çıktısı ekran görüntüsü
+For instance, the sentence "beğenmedim" is correctly classified as 'Negative'.`,
+      images: [image11], // prediction output screenshot
     },
   ],
   tech: ["Python", "Scikit-learn", "SMOTE", "TF-IDF", "Matplotlib", "Seaborn"],
@@ -213,7 +213,7 @@ This insight reveals how different disaster types dominate annual economic impac
           title: "🔐 Authentication & Authorization",
           text: `
     The system implements secure login and registration with role-based authorization.  
-    Each user’s dashboard dynamically changes according to their role (Admin or Employee).  
+    Each user's dashboard dynamically changes according to their role (Admin or Employee).  
     Admins can view all feedback, while employees can only view their own.`,
           images: [dashboard8, calisanlartumgeribildirimlerigoremezkendindenbaskasini],
         },
@@ -317,7 +317,7 @@ This insight reveals how different disaster types dominate annual economic impac
       → When a book is added, borrowed, or returned, UI lists refresh without manual reload.  
 
       🔄 **State Pattern:**  
-      Controls the “status” of books — **Rafta**, **Ödünç Alındı**, **İade Edildi**.  
+      Controls the "status" of books — **Rafta**, **Ödünç Alındı**, **İade Edildi**.  
       → Each book object changes its internal state dynamically, reducing condition-heavy logic.  
 
       ⚙️ **Strategy Pattern:**  
@@ -326,7 +326,6 @@ This insight reveals how different disaster types dominate annual economic impac
 
       🎨 **Decorator Pattern:**  
       Improves GUI aesthetics — buttons, forms, and messages are styled dynamically without rewriting base components.`,
-      images: [scr6],
             images: [scr6],
           },
           {
@@ -403,7 +402,7 @@ This insight reveals how different disaster types dominate annual economic impac
     {
       title: "🛒 3. Product Listing & Filtering",
       text: `
-      Products are categorized under “Outerwear”, “Bottom Wear”, “Top Wear”, “New Arrivals”, and “Discounted Products”.  
+      Products are categorized under "Outerwear", "Bottom Wear", "Top Wear", "New Arrivals", and "Discounted Products".  
       Users can filter products by price, size, fabric type, and color.  
       All data is dynamically fetched from the MySQL database.`,
       images: [image4, image5],
@@ -426,69 +425,7 @@ This insight reveals how different disaster types dominate annual economic impac
   ],
   tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "WampServer"],
   github: "https://github.com/zeynepuguz/e-ticaret-sitesi",
-},
-
-6: {
-  title: "StajVBTReport – Student Grade Reporting System",
-  description: `
-  This project is a dynamic student grade reporting application built using **Telerik Report Designer**.  
-  The purpose is to visualize student grades from the database, filter results according to query types, and export the reports in PDF/Word/Excel formats.  
-  It was developed as part of my internship at **VBT Software**.`,
-  sections: [
-    {
-      title: "🧭 1. Overview",
-      text: `
-      The application provides an interactive interface that displays students’ **midterm**, **final**, **average**, and **pass/fail status**.  
-      Users can filter the results based on query type — for example: passed students, failed students, or all students.`,
-      images: [nofinal_midterm1, only_midterm2],
-    },
-    {
-      title: "📊 2. Grade Report Screen",
-      text: `
-      The “Student Grades” report displays each student's name, surname, course name, midterm score, final score, and average.  
-      Passed students are highlighted in **green**, while failed ones appear in **red** for better visual feedback.`,
-      images: [Fiziknotlari3],
-    },
-    {
-      title: "🎓 3. Passed / Failed Students Reports",
-      text: `
-      - The “Passed Students” report lists only students with an average score of 50 or higher.  
-      - The “Failed Students” report separately displays students who didn’t meet the passing criteria.  
-      Color coding and checkbox visualization make it easy to interpret results.`,
-      images: [gecen_ogrenciler5, kalan_ogrenciler4],
-    },
-    {
-      title: "🧮 4. Grade Calculation and Message Field",
-      text: `
-      For students with an average below 50, the system automatically displays a message such as  
-      “Needs at least X points to pass.”  
-      This logic was implemented using **conditional expressions (IIf)** inside the Telerik Report Designer.`,
-      images: [Buthesabi6],
-    },
-    {
-      title: "🧩 5. Queries and Parameters",
-      text: `
-      The parameter panel allows users to select course name (CourseName), query type (QueryType),  
-      or filter only midterm/final data (OnlyMidterm, OnlyFinal).  
-      The Telerik UI dynamically fetches parameter values through a **WebServiceDataSource**.`,
-      images: [sorgular7],
-    },
-    {
-      title: "📄 6. Report Design and PDF Export",
-      text: `
-      During the design phase, several components were customized in **Telerik Report Designer**:  
-      - Table structure (Table item)  
-      - Dynamic text boxes  
-      - Conditional formatting  
-      - DateTime fields (Now())  
-      - Page setup (A4 – landscape/portrait orientation)  
-      Reports can be exported in PDF, Word, Excel, or PowerPoint formats.`,
-      images: [page_setup9, pdfolusturma10, pdf11],
-    },
-  ],
-  tech: ["C#", ".NET", "Telerik", "SQL Server", "Report Designer"],
-  github: "https://github.com/zeynepuguz/StajVBTReport",
-},
+  },
 
 
 };
@@ -504,7 +441,7 @@ export default function ProjectDetailPage() {
         <p className="text-lg mb-4">Project not found 🧐</p>
         <button
           onClick={() => navigate("/projects")}
-          className="bg-pink-500/20 border border-pink-400/40 text-pink-200 px-5 py-2 rounded-full hover:bg-pink-500/30 transition"
+          className="bg-purple-500/20 border border-purple-400/40 text-purple-300 px-5 py-2 rounded-full hover:bg-purple-500/30 transition"
         >
           ← Back to Projects
         </button>
@@ -513,18 +450,18 @@ export default function ProjectDetailPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#111] to-[#1a0e1e] text-white py-16 px-6">
+    <div className="min-h-screen text-gray-200 py-16 px-6" style={{ background: "radial-gradient(circle at center, #000000 0%, #0a0a0a 50%, #000000 100%)" }}>
       {/* 🔙 Back Button */}
       <motion.button
         onClick={() => navigate("/projects")}
-        className="block mx-auto mb-10 bg-pink-500/10 border border-pink-400/40 text-pink-200 px-5 py-2 rounded-full hover:bg-pink-500/20 transition-all"
+        className="block mx-auto mb-10 bg-purple-500/10 border border-purple-400/40 text-purple-300 px-5 py-2 rounded-full hover:bg-purple-500/20 transition-all"
       >
         ← Back to Projects
       </motion.button>
 
       {/* 🧠 Project Title */}
       <motion.h1
-        className="project-detail-title text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(236,72,153,0.2)]"
+        className="project-detail-title text-5xl font-extrabold text-center mb-10 text-white drop-shadow-[0_0_20px_rgba(139,92,246,0.5)]"
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -549,9 +486,10 @@ export default function ProjectDetailPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="project-section bg-gray-900/40 p-10 rounded-2xl border border-gray-700 shadow-xl hover:border-pink-400/40 hover:shadow-pink-400/20 transition-all"
+            className="project-section p-10 rounded-2xl border border-purple-500/20 transition-all"
+            style={{ background: "rgba(0, 0, 0, 0.6)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05)" }}
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-center mb-6 bg-gradient-to-r from-pink-300 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-3xl font-semibold text-center mb-6 text-white drop-shadow-[0_0_15px_rgba(139,92,246,0.4)]">
               {section.title}
             </h2>
 
@@ -581,14 +519,14 @@ export default function ProjectDetailPage() {
 
       {/* ⚙️ Technologies */}
       <div className="max-w-4xl mx-auto mt-20 text-center">
-        <h3 className="text-2xl font-semibold mb-4 text-pink-300">
+        <h3 className="text-2xl font-semibold mb-4 text-white">
           🧰 Technologies Used
         </h3>
         <div className="tech-badges flex flex-wrap justify-center gap-3">
           {project.tech?.map((tech, i) => (
             <span
               key={i}
-              className="bg-pink-500/10 border border-pink-400/30 text-pink-200 px-4 py-1 rounded-full text-sm font-medium hover:bg-pink-500/20 transition-all"
+              className="bg-purple-500/10 border border-purple-400/30 text-purple-300 px-4 py-1 rounded-full text-sm font-medium hover:bg-purple-500/20 transition-all"
             >
               {tech}
             </span>
@@ -600,7 +538,7 @@ export default function ProjectDetailPage() {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-8 bg-pink-500/20 border border-pink-400/40 text-pink-200 hover:bg-pink-500/30 transition px-5 py-2 rounded-full backdrop-blur font-medium"
+            className="inline-block mt-8 bg-purple-500/20 border border-purple-400/40 text-purple-300 hover:bg-purple-500/30 transition px-5 py-2 rounded-full backdrop-blur font-medium"
           >
             🔗 View on GitHub
           </a>

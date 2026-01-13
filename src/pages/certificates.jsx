@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 
 // Sertifika görsellerini import et (örnek, kendi dosya adlarınla değiştir)
 import algoDataImg from "../images/crt1.png";
-import cssImg from "../images/crt2.png";
-import javaImg from "../images/crt3.png";
 import oopImg from "../images/crt4.png";
 import algoDesignImg from "../images/crt5.png";
 import aiIntroImg from "../images/crt6.png";
@@ -22,18 +20,6 @@ export default function CertificatesPage() {
       title: "Algorithms and Data Structures Advanced Level",
       from: "BTK",
       image: algoDataImg,
-    },
-    {
-      date: "26/11/2023",
-      title: "CSS Basics",
-      from: "BTK",
-      image: cssImg,
-    },
-    {
-      date: "14/12/2023",
-      title: "Introduction to Programming with Java",
-      from: "BTK",
-      image: javaImg,
     },
     {
       date: "15/12/2023",
@@ -97,7 +83,7 @@ export default function CertificatesPage() {
       <motion.div
         className="absolute inset-0 -z-10 opacity-25 blur-3xl"
         style={{
-          backgroundImage: "linear-gradient(120deg,#ec4899,#8b5cf6,#3b82f6)",
+          backgroundImage: "linear-gradient(120deg,#c084fc,#a78bfa,#f9a8d4)",
           backgroundSize: "200% 200%",
         }}
         animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
@@ -105,24 +91,17 @@ export default function CertificatesPage() {
       />
 
       {/* Başlık */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl font-extrabold text-pink-400 mb-12 text-center"
-      >
-        Certificates
-      </motion.h1>
 
       {/* 🧾 Sertifika Kartları */}
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-6 max-w-6xl">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-6 max-w-6xl mt-8">
         {certificates.map((c, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="bg-white/5 border border-pink-400/30 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg hover:shadow-pink-500/30 hover:-translate-y-2 transition-all duration-300"
+            className="border border-purple-500/20 backdrop-blur-xl rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300"
+            style={{ background: "rgba(0, 0, 0, 0.6)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05)" }}
           >
             {/* Sertifika Görseli */}
             <div className="relative h-48 overflow-hidden">
@@ -136,7 +115,7 @@ export default function CertificatesPage() {
             {/* Metin Alanı */}
             <div className="p-5 mb-4 text-center">
               <p className="text-sm text-gray-400">{c.date}</p>
-              <h2 className="text-lg font-semibold text-pink-300 mt-1">
+              <h2 className="text-lg font-semibold text-white mt-1">
                 {c.title}
               </h2>
               <p className="text-sm text-gray-300 mt-1">from {c.from}</p>
