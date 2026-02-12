@@ -6,19 +6,25 @@ const projects = [
     id: 1,
     title: "Turkish Sentiment Analysis Tool with Deep Learning",
     shortDesc:
-      "A deep learning-based NLP system analyzing Turkish text sentiment using TensorFlow and Keras.",
+      "Deep learning–based sentiment analysis models for Turkish text data (LSTM, BiLSTM, CNN-LSTM).",
   },
   {
     id: 7,
     title: "Turkish Sentiment Analysis Tool with Machine Learning",
     shortDesc:
-      "A machine learning-based NLP system analyzing Turkish text sentiment using Scikit-learn.",
+      "Traditional ML models for Turkish sentiment analysis with text preprocessing and feature extraction.",
   },
   {
     id: 2,
     title: "Studies on Data Science",
     shortDesc:
-      "Exploratory data analysis and ML experimentation on Kaggle with real-world datasets.",
+      "Kaggle notebooks covering data preprocessing, exploratory data analysis, and basic ML techniques.",
+  },
+  {
+    id: 6,
+    title: "Used Car Price Prediction",
+    shortDesc:
+      "Regression-based ML model with EDA, quantile regression for price range estimation, and SHAP for interpretability.",
   },
 ];
 
@@ -58,10 +64,10 @@ export default function ProjectsPage() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
       >
-        Note: I also have brief experience in Java Spring Boot backend development.
+        ML & Data Science projects — see below for other software projects.
       </motion.p>
 
-      {/* Java Spring Boot Projects */}
+      {/* Other Software Projects */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto mt-12">
         {[
           {

@@ -21,7 +21,6 @@ import pina2 from "../images/pina2.jpeg";
 import pina3 from "../images/pina3.jpeg";
 import pina4 from "../images/pina4.jpeg";
 import pina5 from "../images/pina5.jpg";
-import { a } from "framer-motion/client";
 
 export default function AchievementsPage() {
 
@@ -54,35 +53,37 @@ export default function AchievementsPage() {
   const achievements = [
     {
       year: "2024",
-      title: "BigIdea Idea Hackathon (weepay & Kırklareli University)",
+      title: "BigIdea Idea Hackathon (weepay & Kırklareli University AI and Data Science Club)",
       team: "AI and Data Science Club",
       rank: "2nd Place 🥈",
       project: "Innovative Payment & AI Solutions",
       description:
         "We achieved 2nd place in the BigIdea Hackathon organized by weepay and Kırklareli University.",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7258759178574282752/",
       slides: hchSlides,
       activeIndex: indexHch,
     },
-
     {
       year: "2025",
-      title: "TEKNOFEST – Blockchain Technologies Finalist",
+      title: "TEKNOFEST – Blockchain-Based Product Traceability Project (Turkey)",
       team: "Team EvoGenius",
-      rank: "7th Place Nationwide",
-      project: "Digital Garden",
+      rank: "7th Place (Turkey)",
+      project: "Blockchain-Based Product Traceability",
       description:
-        "We collaboratively developed a blockchain-based agricultural traceability system that ensures transparency and authenticity throughout the supply chain.As a team, we ranked 7th nationwide at Teknofest 2025 Blockchain Technologies, demonstrating strong integration between AI, IoT, and blockchain innovation.",
+        "We collaboratively developed a blockchain-based product traceability system. As a team, we ranked 7th nationwide at TEKNOFEST 2025 Blockchain Technologies, demonstrating strong integration between AI, IoT, and blockchain innovation.",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7376576890997927936/",
       slides: evoSlides,
       activeIndex: indexEvo,
     },
     {
       year: "2025",
-      title: "TEKNOFEST – Smart Transportation Finalist",
+      title: "TEKNOFEST – Smart Transportation Competition (Turkey)",
       team: "Team Pina39",
-      rank: "8th Place Nationwide",
+      rank: "8th Place (Turkey)",
       project: "EcoMarineAI",
       description:
-        "Together with my team, we created an AI-powered coastal pollution detection and monitoring system that integrates drone and satellite data for real-time environmental analysis. Our project ranked 8th nationwide at Teknofest 2025 Smart Transportation, highlighting our teamwork and cross-disciplinary approach.",
+        "Together with my team, we created an AI-powered coastal pollution detection and monitoring system that integrates drone and satellite data for real-time environmental analysis. Our project ranked 8th nationwide at TEKNOFEST 2025 Smart Transportation.",
+      link: "https://www.linkedin.com/feed/update/urn:li:activity:7377321408013512705/",
       slides: pinaSlides,
       activeIndex: indexPina,
     },
@@ -103,7 +104,7 @@ export default function AchievementsPage() {
 
       {/* 🎖️ Kartlar */}
       <div className="flex flex-col gap-6 sm:gap-10 items-center w-full mt-8">
-        {achievements.map((a, i) => (
+        {achievements.map((achievement, i) => (
           <div
             key={i}
             className="achievement-card border border-purple-500/20 backdrop-blur-xl rounded-2xl overflow-hidden w-full max-w-[650px]"
@@ -111,33 +112,33 @@ export default function AchievementsPage() {
           >
             {/* 🔄 Görsel Alanı */}
             <div className="slider-container">
-              {a.slides.map((img, j) => (
+              {achievement.slides.map((img, j) => (
                 <div
                   key={j}
                   className={`slide-wrapper ${
-                    a.activeIndex === j ? "active" : ""
+                    achievement.activeIndex === j ? "active" : ""
                   }`}
                 >
                   {/* 🔹 Arka plan blur */}
                   <img
                     src={img}
-                    alt={`${a.project}-blur-${j}`}
+                    alt={`${achievement.project}-blur-${j}`}
                     className="slide-bg"
                   />
                   {/* 🔹 Ön plan net */}
                   <img
                     src={img}
-                    alt={`${a.project}-${j}`}
+                    alt={`${achievement.project}-${j}`}
                     className="slide-foreground"
                   />
                 </div>
               ))}
               <div className="dots">
-                {a.slides.map((_, j) => (
+                {achievement.slides.map((_, j) => (
                   <span
                     key={j}
                     className={`dot ${
-                      a.activeIndex === j ? "active-dot" : ""
+                      achievement.activeIndex === j ? "active-dot" : ""
                     }`}
                   ></span>
                 ))}
@@ -146,14 +147,24 @@ export default function AchievementsPage() {
 
             {/* 📜 Metin kısmı */}
             <div className="p-4 sm:p-6 text-center">
-              <p className="text-xs sm:text-sm text-gray-400">{a.year}</p>
-              <h2 className="text-lg sm:text-xl font-bold text-white mt-1">{a.title}</h2>
-              <p className="text-xs sm:text-sm text-gray-300 mt-1 italic">{a.team}</p>
-              <p className="text-sm sm:text-md text-white mt-2 font-semibold">{a.project}</p>
-              <p className="text-white font-semibold mt-1 text-sm sm:text-base">{a.rank}</p>
+              <p className="text-xs sm:text-sm text-gray-400">{achievement.year}</p>
+              <h2 className="text-lg sm:text-xl font-bold text-white mt-1">{achievement.title}</h2>
+              <p className="text-xs sm:text-sm text-gray-300 mt-1 italic">{achievement.team}</p>
+              <p className="text-sm sm:text-md text-white mt-2 font-semibold">{achievement.project}</p>
+              <p className="text-white font-semibold mt-1 text-sm sm:text-base">{achievement.rank}</p>
               <p className="text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
-                {a.description}
+                {achievement.description}
               </p>
+              {achievement.link && (
+                <a
+                  href={achievement.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 text-purple-300 hover:text-purple-200 text-xs sm:text-sm underline"
+                >
+                  For more details
+                </a>
+              )}
             </div>
           </div>
         ))}

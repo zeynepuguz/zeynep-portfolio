@@ -26,11 +26,11 @@ export default function HomePage() {
           </p>
 
           <p className="animate-fadeUp animate-delay-2 text-lg sm:text-xl text-gray-200 font-medium">
-            Data Scientist
+            Machine Learning Engineer (Junior)
           </p>
 
           <p className="profile-bio text-sm sm:text-base mt-4 px-2">
-            I am a final year Software Engineering student with a strong focus on Data Science and applied Artificial Intelligence, particularly in Natural Language Processing and Machine Learning. I have hands-on experience with Python, TensorFlow, PyTorch, scikit-learn, Pandas, NumPy, Zemberek, and NLP augmentation techniques. I focus on creating end-to-end workflows, understanding model behavior, and extracting meaningful insights. My goal is to grow as an applied Data Scientist and contribute to practical, data-driven projects.
+            I build Machine Learning and AI-driven systems with a strong focus on end-to-end model development and evaluation. My experience includes data preprocessing, feature engineering, comparative model experimentation, and interpretability analysis. I work with both classical ML algorithms and deep learning frameworks such as PyTorch and TensorFlow, aiming to develop reliable and scalable AI solutions. My long-term goal is to deepen my expertise in advanced AI systems while maintaining a solid software engineering foundation.
           </p>
         </div>
 

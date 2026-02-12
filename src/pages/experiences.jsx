@@ -4,45 +4,36 @@ export default function ExperiencesPage() {
   const experiences = [
   {
     company: "Koç Finansman Inc.",
-    role: "Mentee — Orange Wings Mentorship Program",
-    period: "12/2025 – Ongoing",
+    role: "Mentee · Turuncu Kanatlar Mentorship Program",
+    period: "12/2025 – Continuous",
     location: "Istanbul, Turkey",
     description: `
-I was selected as a mentee in Koç Finans Turuncu Kanatlar Mentorship Program, where I receive guidance
-on career development, industry expectations, and professional networking.
-
-I am especially excited to learn directly from experienced professionals, gain real-world insights
-into finance and data-driven business environments, and apply this mentorship to my long-term growth
-as a data-focused professional.
+I was selected as a mentee in a competitive mentorship program focused on technology, innovation,
+and data-driven career development, where I am gaining exposure to real-world business problems
+and industry practices. Interested in NLP, LLMs and Applied AI Systems.
     `.trim(),
   },
   {
     company: "INOSENS Information Technologies Ltd.",
-    role: "Data Science & NLP Intern",
+    role: "Data Science & NLP Intern · Data Science and NLP Department",
     period: "04/08/2025 – 29/08/2025",
-    location: "Hybrid — Gebze, Kocaeli",
+    location: "Kocaeli / Gebze · Hybrid",
     description: `
-During my internship at INOSENS, I worked on end-to-end Natural Language Processing tasks focused on
-Turkish text data. I developed NLP preprocessing pipelines using Zemberek and custom rule-based
-cleaning methods, and applied data augmentation techniques to improve robustness on noisy text.
+I developed Turkish NLP preprocessing pipelines using Zemberek and data augmentation techniques,
+and applied feature engineering and data cleaning to improve sentiment classification performance.
 
-I performed feature engineering and data cleaning for sentiment classification tasks, trained
-machine learning and deep learning models, and focused on understanding model behavior rather than
-optimizing accuracy alone. I also contributed to model evaluation, metric analysis, and technical
-documentation for NLP solutions.
+I trained and evaluated machine learning and deep learning models, focusing on understanding model
+behavior through comparative experiments using TensorFlow, PyTorch, and scikit-learn. I contributed
+to model evaluation, metric analysis, and documentation to support reliable NLP solutions.
     `.trim(),
   },
   {
     company: "VBT Software Inc.",
-    role: "Software Developer Intern",
+    role: "Software Developer Intern · Software Development Department",
     period: "16/06/2025 – 28/07/2025",
-    location: "Remote",
+    location: "Istanbul / Ataşehir · Remote",
     description: `
-During my internship at VBT Software, I gained exposure to real-world software development practices
-through technical training and mentorship across multiple departments.
-
-This experience strengthened my problem-solving skills, improved my understanding of professional
-development workflows, and enhanced my ability to collaborate effectively within engineering teams.
+I received technical training and mentorship from experienced software engineers at VBT.
     `.trim(),
   },
 ];

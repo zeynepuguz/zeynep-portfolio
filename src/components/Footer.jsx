@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="mt-20 py-6 text-center text-gray-300 bg-transparent border-t border-purple-500/30">
       <div className="container mx-auto px-4">
         <p className="mb-3 text-sm sm:text-base">
-          © 2025 Zeynep Uğuz | Data Scientist
+          © 2025 Zeynep Uğuz | Machine Learning Engineer
         </p>
 
         {/* 🌐 Sosyal linkler */}

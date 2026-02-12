@@ -80,10 +80,9 @@ export default function CommunicationPage() {
       hover: "#c084fc",
     },
   ];
-  <br />
+
   return (
     <div className="relative min-h-[calc(100vh-80px)] py-8 sm:py-16 lg:py-20 px-4 sm:px-6 text-white flex flex-col items-center justify-center">
-      {}
       <motion.div
         className="absolute inset-0 -z-10 opacity-30 blur-3xl"
         style={{
@@ -101,8 +100,6 @@ export default function CommunicationPage() {
         }}
       />
 
-
-      {}
       <div className="flex items-center justify-center gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 lg:mb-20 flex-wrap">
         {links.map((link, i) => (
           <motion.a
@@ -121,7 +118,6 @@ export default function CommunicationPage() {
         ))}
       </div>
 
-      {}
       <motion.div
         className="w-full max-w-[500px] border border-purple-500/20 rounded-[28px] p-4 sm:p-6 lg:p-8 m-2 backdrop-blur-lg shadow-2xl mt-8"
         style={{ background: "rgba(0, 0, 0, 0.6)", boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8), 0 0 40px rgba(192, 132, 252, 0.15), inset 0 0 20px rgba(249, 168, 212, 0.05)" }}

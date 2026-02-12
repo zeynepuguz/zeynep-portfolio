@@ -98,7 +98,7 @@ Model comparison revealed that LSTM and BiLSTM models performed best, particular
     },
   ],
   tech: ["Python", "TensorFlow", "Keras", "Zemberek", "NLPaug", "FastAPI"],
-  github: "https://github.com/zeynepuguz/STAJ22002",
+  github: "https://github.com/zeynepuguz/Turkish-Sentiment-Analysis-with-Deep-Learning-LSTM-Models-",
 },
   7:{
   title: "Turkish Sentiment Analysis Tool (Machine Learning)",
@@ -193,7 +193,7 @@ This insight reveals how different disaster types dominate annual economic impac
       },
     ],
     tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "NumPy", "Kaggle"],
-    github: "https://www.kaggle.com/code/zeynepuuz/verionislemeornegi",
+    kaggle: "https://www.kaggle.com/code/zeynepuuz/verionislemeornegi",
   },
   3: {
       title: "Corporate Communication Platform – InsightHub",
@@ -378,6 +378,32 @@ This insight reveals how different disaster types dominate annual economic impac
         ],
         github: "https://github.com/zeynepuguz/KutuphaneSistemi",
       },
+  6: {
+    title: "Used Car Price Prediction",
+    description: `
+Built a regression-based ML model with exploratory data analysis, quantile regression for price range
+estimation, and SHAP for model interpretability. The project demonstrates end-to-end ML workflow from
+data cleaning and feature engineering to model evaluation and explainability.`,
+    sections: [
+      {
+        title: "📘 Overview",
+        text: `
+This project tackles used car price prediction using classical machine learning and interpretability
+tools. The goal was to build a reliable regression model and explain its predictions using SHAP
+(SHapley Additive exPlanations), making the model's decisions transparent and actionable.`,
+      },
+      {
+        title: "📊 Approach",
+        text: `
+• Exploratory data analysis (EDA) on car attributes and prices
+• Quantile regression for price range estimation
+• SHAP values for model interpretability and feature importance
+• End-to-end pipeline from raw data to predictions`,
+      },
+    ],
+    tech: ["Python", "Scikit-learn", "SHAP", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    github: "https://github.com/zeynepuguz/Used-Car-Price-Prediction",
+  },
   5: {
   title: "E-Commerce Website (PHP + MySQL + HTML/CSS + JS)",
   description: `
@@ -533,14 +559,14 @@ export default function ProjectDetailPage() {
           ))}
         </div>
 
-        {project.github && (
+        {(project.github || project.kaggle) && (
           <a
-            href={project.github}
+            href={project.kaggle || project.github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-8 bg-purple-500/20 border border-purple-400/40 text-purple-300 hover:bg-purple-500/30 transition px-5 py-2 rounded-full backdrop-blur font-medium"
           >
-            🔗 View on GitHub
+            🔗 {project.kaggle ? "View on Kaggle" : "View on GitHub"}
           </a>
         )}
       </div>
