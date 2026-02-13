@@ -3,13 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://zeynepuguz.github.io/zeynep-portfolio",
+  "homepage": "https://zeynepuguz.github.io/zeynep-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "copy dist\\index.html dist\\404.html",
-    "predeploy": "npm run build",
-    "deploy": "npm run postbuild && gh-pages -d dist"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
