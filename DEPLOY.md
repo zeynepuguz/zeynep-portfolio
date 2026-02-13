@@ -1,81 +1,114 @@
 # Portföyü GitHub Pages'e Yükleme (Deploy)
 
-## 1. Tek komutla deploy
+GitHub Pages’in çalışması için **3 şey** aynı anda doğru olmalı. Biri yanlışsa site açılmaz veya bozuk görünür.
 
-Proje klasöründe (terminalde `zeynep-portfolio` içindeyken):
+---
+
+## ✅ 1. GitHub Pages ayarı (branch / folder)
+
+Repo’da: **Settings** → **Pages**
+
+Şunlar **aynen** böyle olmalı:
+
+| Ayar    | Değer              |
+|---------|--------------------|
+| Source  | **Deploy from a branch** |
+| Branch  | **gh-pages**       |
+| Folder  | **/(root)**        |
+
+**Save** de.  
+❌ **main** veya **docs** seçili olmasın.  
+❌ GitHub Actions ile deploy kullanmayın; sadece **gh-pages** branch’i kullanın.
+
+---
+
+## ✅ 2. Vite base (yol) ayarı
+
+Site adresin: `https://zeynepuguz.github.io/zeynep-portfolio/`
+
+Bunun için `vite.config.js` içinde **mutlaka** şu satır olmalı:
+
+```js
+base: "/zeynep-portfolio/"
+```
+
+Bu yoksa veya yanlışsa: sayfa açılır ama CSS/JS yüklenmez → boş veya 404.
+
+*(Projede bu ayar zaten var.)*
+
+---
+
+## ✅ 3. Deploy komutu (build + gh-pages)
+
+Proje klasöründe:
 
 ```bash
 npm run deploy
 ```
 
 Bu komut:
-- Önce `npm run build` ile projeyi derler (dist klasörü oluşur)
-- Sonra `gh-pages` ile `dist` içeriğini GitHub’daki **gh-pages** branch’ine yükler
+1. `npm run build` → `dist` oluşturur  
+2. `gh-pages -d dist` → `dist` içeriğini **gh-pages** branch’inin **köküne** yükler  
+
+Yani **gh-pages** branch’inde kökte `index.html` ve `assets/` olur. Pages bu branch’ten yayınladığı için site buradan servis edilir.
 
 ---
 
-## 2. Sık karşılaşılan sorunlar ve çözümleri
+## 🔍 4. “Olmuyor” diyorsan: 4 hızlı kontrol
 
-### "dist folder not found" / Build çalışmıyor
+### Kontrol 1: Yayınlanan yerde index.html var mı?
 
-- Önce build’i ayrı çalıştırın: `npm run build`
-- Hata alırsanız: `npm install` yapıp tekrar `npm run build` deneyin.
+- GitHub’da repo → **Code** → branch listesinden **gh-pages** seç.
+- Kök dizinde **index.html** dosyası görünüyor mu?
+  - ✅ Varsa: dosya yüklemesi doğru.
+  - ❌ Yoksa: `npm run deploy` tekrar çalıştır; hata mesajı varsa düzelt.
 
-### Git remote yok / "remote origin does not appear to be a git repository"
+### Kontrol 2: Pages ayarı ne?
 
-Reponun GitHub’a bağlı olduğundan emin olun:
+- **Settings** → **Pages**
+- **Source:** Deploy from a branch  
+- **Branch:** **gh-pages**  
+- **Folder:** **/(root)**  
 
-```bash
-git remote -v
-```
+Bunlardan biri farklıysa düzelt, **Save** de.
 
-Çıktıda `origin` ve `https://github.com/zeynepuguz/zeynep-portfolio` (veya `.git`’li hali) görünmeli.
+### Kontrol 3: Vite base var mı?
 
-Yoksa ekleyin:
+- `vite.config.js` içinde `base: "/zeynep-portfolio/"` satırı var mı?
+  - ✅ Varsa: asset yolları doğru.
+  - ❌ Yoksa: ekle, `npm run deploy` tekrar çalıştır.
 
-```bash
-git remote add origin https://github.com/zeynepuguz/zeynep-portfolio.git
-```
+### Kontrol 4: Adres ve cache
 
-(Repo adı farklıysa kendi kullanıcı adı ve repo adınızı yazın.)
+- Açman gereken adres: **https://zeynepuguz.github.io/zeynep-portfolio/**  
+  (sonunda `/` olsun.)
+- İlk deploy’dan sonra 1–2 dakika bekleyin.
+- Hâlâ eski/boş sayfa görüyorsan: **Ctrl+Shift+R** (zorla yenile) veya gizli pencerede dene.
 
-### Giriş / yetki hatası (Authentication failed, 403)
+---
 
-GitHub artık şifre ile push kabul etmiyor. İki yol var:
+## Giriş hatası (Authentication failed / 403)
 
-**A) Personal Access Token (HTTPS ile)**
+GitHub artık şifre ile push kabul etmiyor. **Personal Access Token** kullanın:
 
 1. GitHub → **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**  
-2. **Generate new token** → repo yetkisi verin.  
-3. Token’ı kopyalayın (bir daha gösterilmez).  
-4. `npm run deploy` çalıştırdığınızda:
-   - **Username:** GitHub kullanıcı adınız  
-   - **Password:** Token’ı yapıştırın (şifre değil).
-
-**B) SSH kullanmak**
-
-1. SSH key oluşturup GitHub’a ekleyin.  
-2. Remote’u SSH’a çevirin:
-
-```bash
-git remote set-url origin git@github.com:zeynepuguz/zeynep-portfolio.git
-```
-
-Sonra tekrar: `npm run deploy`
-
-### Site açılmıyor / 404
-
-- Adres tam olarak şu olmalı: **https://zeynepuguz.github.io/zeynep-portfolio/**  
-- Repo adı farklıysa: `https://<kullanici-adin>.github.io/<repo-adin>/`  
-- GitHub’da repo → **Settings** → **Pages** → **Source:** “Deploy from a branch” → **Branch:** `gh-pages` → **Save**.  
-- İlk deploy’dan sonra 1–2 dakika bekleyin.
+2. **Generate new token (classic)** → **repo** işaretli olsun → oluştur, token’ı kopyalayın.  
+3. `npm run deploy` çalıştırın.  
+4. Username: GitHub kullanıcı adınız  
+5. Password: **Token’ı yapıştırın** (şifre değil).
 
 ---
 
-## 3. Özet adımlar
+## Özet (tek hamle)
 
-1. Proje klasöründe: `npm run deploy`  
-2. Giriş istenirse: GitHub kullanıcı adı + **Personal Access Token** (şifre yerine).  
-3. Birkaç dakika sonra: **https://zeynepuguz.github.io/zeynep-portfolio/** adresinden kontrol edin.
+1. **Settings → Pages:** Source: **Deploy from a branch**, Branch: **gh-pages**, Folder: **/(root)** → Save.  
+2. **vite.config.js:** `base: "/zeynep-portfolio/"` var mı kontrol et (zaten var).  
+3. Terminalde: `npm run deploy`  
+4. Giriş istenirse: kullanıcı adı + **Personal Access Token**.  
+5. 1–2 dakika sonra: **https://zeynepuguz.github.io/zeynep-portfolio/** adresinden kontrol et.
 
-Bu adımları uyguladıktan sonra hâlâ hata alırsanız, tam hata mesajını (ve mümkünse ekran görüntüsünü) paylaşırsanız ona göre devam edebiliriz.
+Bu adımlardan sonra hâlâ “ısrarla olmuyor” dersen, şu iki bilgiyi yaz:  
+- Settings → Pages’te **hangi branch** seçili? (gh-pages mi, main mi?)  
+- **gh-pages** branch’inde kökte **index.html** görünüyor mu? (Evet/Hayır)
+
+Bu iki cevapla nokta atışı çözülebilir.
